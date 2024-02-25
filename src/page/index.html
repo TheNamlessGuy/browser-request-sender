@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Request Sender</title>
+    <link rel="icon" type="image/x-icon" href="/res/icon/96.png"/>
+    <link rel="stylesheet" type="text/css" href="index.css"/>
+    <script src="custom-elements/errors.js"></script>
+    <script src="custom-elements/ez-select.js"></script>
+    <script src="custom-elements/labeled-select.js"></script>
+    <script src="custom-elements/viewers/json.js"></script>
+    <script src="custom-elements/viewers/svg.js"></script>
+    <script src="custom-elements/viewers/xml.js"></script>
+    <script src="custom-elements/key-value-table.js"></script>
+    <script src="custom-elements/titled-hr.js"></script>
+    <script src="custom-elements/template-selection.js"></script>
+    <script src="custom-elements/response-container.js"></script>
+    <script src="custom-elements/url-selector.js"></script>
+    <script src="custom-elements/modals/base.js"></script>
+    <script src="custom-elements/modals/input.js"></script>
+    <script src="custom-elements/modals/confirm.js"></script>
+    <script src="custom-elements/tabs/tab.js"></script>
+    <script src="custom-elements/tabs/select-body-tab.js"></script>
+    <script src="custom-elements/tabs/tab-container.js"></script>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div id="sidebar">
+      <div class="center">
+        <button id="send-btn">Send</button>
+      </div>
+      <hr>
+      <div class="center">
+        <button id="save-as-template-btn">Save as template</button>
+      </div>
+      <titled-hr>Templates</titled-hr>
+      <div id="template-container"></div>
+    </div>
+    <div id="page">
+      <error-container id="errors"></error-container>
+      <url-selector id="url"></url-selector>
+      <tab-container id="data">
+        <tab-tab title="Header" id="header">
+          <key-value-table body></key-value-table>
+        </tab-tab>
+        <tab-select-body title="Body" id="body" active>
+          <select extra>
+            <option>Key - Value</option>
+          </select>
+          <key-value-table body></key-value-table>
+        </tab-select-body>
+      </tab-container>
+      <response-container id="response"></response-container>
+    </div>
+  </body>
+</html>

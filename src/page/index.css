@@ -1,0 +1,85 @@
+@media(prefers-color-scheme: light) {
+  :root {
+    --background-color: #CCCCFF;
+    --text-color: #000;
+    --text-darkened-color: #000033;
+    --active-color: #99CCFF;
+    --active-darkened-color: #99FFFF;
+    --active-darkenedest-color: #33FFFF;
+  }
+}
+
+@media(prefers-color-scheme: dark) {
+  :root {
+    --background-color: #000033;
+    --text-color: #FFF;
+    --text-darkened-color: #FFFFCC;
+    --active-color: #333399;
+    --active-darkened-color: #330099;
+    --active-darkenedest-color: #330066;
+    --green-color: #66CC00;
+    --red-color: #990000;
+  }
+}
+
+.hidden { display: none !important; }
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+}
+
+h1 { margin: 0; margin-bottom: 5px; }
+hr { color: var(--text-color); width: 100%; }
+
+select, input, button, textarea {
+  background-color: var(--active-color);
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  border-radius: 5px;
+}
+
+button { cursor: pointer; }
+button.green { border-color: var(--green-color); border-width: 2px; }
+button.red { border-color: var(--red-color); border-width: 2px; }
+button:disabled { cursor: not-allowed; }
+button:hover { background-color: var(--active-darkened-color); }
+button:active { background-color: var(--active-darkenedest-color); }
+
+input {
+  background-color: var(--active-darkenedest-color);
+  padding: 2px 4px;
+}
+input:focus, textarea:focus { outline: none; }
+
+#sidebar {
+  background-color: var(--active-color);
+  border-right: 1px solid var(--text-color);
+  width: fit-content;
+  min-width: 150px;
+  min-height: calc(100vh - 10px); /* 10px == padding * 2 */
+  padding: 5px;
+}
+
+.center {
+  display: flex;
+  justify-content: space-around;
+}
+
+#send-btn {
+  font-size: 26px;
+}
+
+#page {
+  flex-grow: 1;
+  padding: 5px;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+}
